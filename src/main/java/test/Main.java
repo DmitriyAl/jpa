@@ -11,7 +11,7 @@ import javax.persistence.Persistence;
 public class Main {
     public static void main(String[] args) {
         Book book = new Book("H2G2", "Smth book", 12.5F, "1-84023-742-2", 354, false);
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("chapter04PU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("entityManager");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
