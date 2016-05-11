@@ -3,18 +3,19 @@ package test;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 /**
  * Created by dmitriyal on 10.05.16.
  */
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "findAllBooks", query = "Select b from book b"),
-        @NamedQuery(name = "findBookH2G2", query = "Select b from book b where b.title = \'H2G2\'")
+        @NamedQuery(name = "findAllBooks", query = "SELECT b FROM Book b"),
+        @NamedQuery(name = "findBookH2G2", query = "SELECT b FROM Book b WHERE b.title = 'H2G2'")
 })
-public class Book {
+public class Book implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
     private String title;

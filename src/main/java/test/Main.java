@@ -10,8 +10,8 @@ import javax.persistence.Persistence;
  */
 public class Main {
     public static void main(String[] args) {
-        Book book = new Book("H2G2", "Smth book", 12.5F, "1-84023-742-2", 354, false);
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("entityManager");
+        Book book = new Book("H2G2", "THE HITCHHIKER'S GUIDE TO THE GALAXY", 12.5F, "1-84023-742-2", 354, false);
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("test");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
